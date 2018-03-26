@@ -5,7 +5,7 @@ window.onload=function(){
 	canvas.height=480;
 	var c=canvas.getContext('2d');
 	var vid = document.getElementById("planeaudio");
-	vid.volume = 0.05;//0.05
+	
 	var vid2 = document.getElementById("trainaudio");
 	vid2.volume = 0.2;//0.2
 
@@ -61,6 +61,12 @@ window.onload=function(){
 			mx+=0.5;
 			my+=0.01;
 
+			if(planex>=-200 && planex<=1200){
+				vid.volume = 0.05;//0.05
+			}else
+			{
+				vid.volume = 0.0;
+			}
 
 			c.save();
 			c.beginPath();
@@ -151,7 +157,9 @@ window.onload=function(){
 			if(gra>1000){gra=0;}//for grass
 			if(fen>1000){fen=0;}//for fence
 			if(gf>1000){gf=0;}//for grassfield
-			if(planex<=-150 && planey<=0){planex=1000; planey=100;}
+
+			var rand=Math.floor((Math.random() * -2010) + -700);
+			if(planex<=rand){planex=1150; planey=100;}
 			if(tn1>1000){tn1=-200;}//near free 1
 			if(tn2>1000){tn2=-200;}//near free 2
 			if(tn3>1000){tn3=-200;}//near free 3

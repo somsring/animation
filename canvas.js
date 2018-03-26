@@ -7,7 +7,7 @@ window.onload=function(){
 	var vid = document.getElementById("planeaudio");
 	
 	var vid2 = document.getElementById("trainaudio");
-	vid2.volume = 0.2;//0.2
+	vid2.volume = 0.3;//0.2
 
 	var loop;
 		//for cloud
@@ -62,7 +62,7 @@ window.onload=function(){
 			my+=0.01;
 
 			if(planex>=-200 && planex<=1200){
-				vid.volume = 0.05;//0.05
+				vid.volume = 0.5;//0.05
 			}else
 			{
 				vid.volume = 0.0;
